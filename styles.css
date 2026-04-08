@@ -1,0 +1,879 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --bg-color: #081029;
+  --main-color: #2800f0;
+  --text-color: #333;
+  --second-text-color: #555;
+  --white-color: #fff;
+  --cover-color: linear-gradient(45deg, #2800f0, #00299a);
+  --pages-color: linear-gradient(90deg, #fff, #ddd);
+  --border: .125rem solid #2800f0;
+  --box-shadow: 0 0 .6rem rgba(0, 0, 0, .2);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 66rem;
+    height: 45rem;
+    padding: 2rem;
+    perspective: 250rem;
+    animation: show-animate 2s forwards;
+}
+
+@keyframes show-animate {
+    0%,30% {
+        opacity: 0;
+        transform: rotate(-20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--cover-color);
+    box-shadow: var(--box-shadow);
+    border-top-left-radius: .6rem;
+    border-bottom-left-radius: .6rem;
+    transform-origin: right;
+}
+
+.cover.cover-left {
+    z-index: -1;
+}
+
+.cover.cover-right {
+    z-index: 100;
+    transition: transform 1s cubic-bezier(.645, .045, .355, 1);
+}
+
+.cover.cover-right.turn {
+    transform: rotateY(180deg);
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    perspective: 250rem;
+}
+
+.book .book-page {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: var(--pages-color);
+    box-shadow: 0 0 .6rem rgba(0, 0, 0, .1);
+    display: flex;
+    padding: 2rem;
+}
+
+.book-page.page-left {
+    box-shadow: -.6rem .6rem .6rem rgba(0, 0, 0, .1);
+}
+
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-page img {
+    max-width: 180px;
+    border-radius: 50%;
+    border: .25rem solid var(--main-color);
+    margin-bottom: .8rem;
+}
+
+.profile-page h1 {
+    font-size: 2.7rem;
+    line-height: 1;
+}
+
+.profile-page h3 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.profile-page .social-media {
+    margin: .6rem 0 .8rem;
+}
+
+.profile-page .social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent; 
+    border: var(--border);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: var(--main-color);
+    margin: 0 .2rem;
+    transition: .5s;
+}
+
+.profile-page .social-media a:hover {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+.profile-page p {
+    text-align: justify;
+}
+
+.profile-page .btn-box {
+    margin-top: 1.2rem;
+
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 9.5rem;
+    height: 3rem;
+    background: var(--main-color);
+    border: var(--border);
+    border-radius: .3rem;
+    font-size: 1rem;
+    color: var(--white-color);
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2) {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+.book-page.page-right {
+    position: absolute;
+    right: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(.645, .045, .355, 1);
+}
+
+.book-page.page-right.turn {
+    transform: rotateY(-180deg);
+}
+
+.book-page .page-front,
+.book-page .page-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--pages-color);
+    padding: 1.5rem 2rem;
+}
+
+.book-page .page-front {
+    transform: rotateY(0deg) translateZ(1px);
+}
+
+.book-page .page-back {
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.workeduc-box {
+    border-left: var(--border);
+}
+
+.workeduc-box .workeduc-content {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.workeduc-box .workeduc-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -0.65rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.workeduc-content .year {
+    color: var(--main-color);
+}
+
+.workeduc-content .year i {
+    margin-right: .4rem;
+}
+
+.number-page {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nextprev-btn {
+    position: absolute;
+    bottom: .9rem;
+    right: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--second-text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.nextprev-btn:hover {
+    color: var(--main-color);
+}
+
+.nextprev-btn.back {
+    left: 1.5rem;
+}
+
+.services-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.services-box .services-content {
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 0.6rem 0.4rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 110px;
+}
+
+.services-content i {
+    font-size: 1.6rem;
+    color: var(--main-color);
+    margin-bottom: 0.3rem;
+}
+
+.services-content h3 {
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+}
+
+.services-content .btn {
+    width: 5.5rem;
+    height: 1.8rem;
+    font-size: 0.75rem;
+    padding: 0;
+    margin-top: 0.3rem;
+}
+
+.services-box .services-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--main-color);
+}
+
+.services-content .btn {
+    width: 6rem;
+    height: 2rem;
+    font-size: 0.8rem;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skills-box .skills-content {
+    flex: 1 1 20rem;
+}
+
+.skills-content h3 {
+    font-size: 1.3rem;
+    line-height: 1;
+    margin-bottom: .6rem;
+}
+
+.skills-content .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.skills-content .content span {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 5rem;
+    border: var(--border);
+    border-radius: .3rem;
+    font-weight: 600 ;
+    transition: .3s ease;
+}
+
+.skills-content .content span:hover {
+    box-shadow: var(--box-shadow);
+}
+
+.skills-content .content span i {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+.portfolio-box .img-box {
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    border: var(--border);
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.portfolio-box .img-box img {
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+
+.portfolio-box .img-box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-box .info-box {
+    margin: 1rem 0 1.5rem;
+}
+
+.portfolio-box .info-box .info-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.portfolio-box .info-box .info-title h3 {
+    font-size: 1.3rem;
+}
+
+.portfolio-box .info-box .info-title a {
+    display: flex;
+    align-items: center;
+    color: var(--main-color);
+}
+
+.portfolio-box .info-box .info-title a i {
+    margin-left: .3rem;
+}
+
+.portfolio-box .info-box p:nth-of-type(1) {
+    font-weight: 600;
+}
+
+.portfolio-box .btn-box {
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio-box .btn-box .btn {
+    margin: 0 1.15rem;
+}
+
+.contact-box {
+    text-align: center;
+}
+
+.contact-box .field {
+    width: 100%;
+    background: transparent;
+    border: var(--border);
+    border-radius: .3rem;
+    padding: .8rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.contact-box .field::placeholder {
+    color: var(--text-color);
+}
+
+.contact-box textarea {
+    resize: none;
+    height: 15rem;
+}
+
+.contact-box .btn {
+    cursor: pointer;
+}
+
+.back-profile {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: var(--border);
+    border-radius: .3rem;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.back-profile:hover {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+.back-profile p {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(.5);
+    font-size: 1rem;
+    color: var(--main-color);
+    opacity: 0;
+    transition: .5s;
+}
+
+.back-profile:hover p {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    top: -1.8rem
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: var(--white-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: var(--border);
+    width: 70%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    color: var(--text-color);
+}
+
+.modal-content h2 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.close {
+    color: var(--main-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    opacity: 0.8;
+}
+
+#modalContent {
+    line-height: 1.6;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Tablette large — le livre reste mais plus petit */
+@media (max-width: 1100px) {
+    .wrapper {
+        width: 95vw;
+        height: 45rem;
+    }
+}
+
+/* Tablette / Mobile — layout carte vertical, plus de 3D */
+@media (max-width: 900px) {
+
+    /* ---- Reset body & wrapper ---- */
+    body {
+        align-items: flex-start;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .wrapper {
+        width: 100%;
+        height: auto;
+        padding: 1.5rem 1rem 3rem;
+        perspective: none;
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    /* ---- Masquer les couvertures ---- */
+    .cover {
+        display: none;
+    }
+
+    /* ---- Le livre devient une colonne de cartes ---- */
+    .book {
+        flex-direction: column;
+        perspective: none;
+        gap: 1.2rem;
+    }
+
+    /* ---- Chaque book-page = une carte blanche ---- */
+    .book .book-page {
+        position: relative !important;
+        right: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        border-radius: .8rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        transform: none !important;
+        transform-style: flat !important;
+        transition: none !important;
+        display: block !important;
+    }
+
+    /* ---- Désactiver les effets .turn ---- */
+    .book-page.page-right.turn {
+        transform: none !important;
+    }
+
+    /* ---- page-front et page-back : blocs normaux empilés ---- */
+    .book-page .page-front,
+    .book-page .page-back {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        padding: 1.5rem !important;
+        background: linear-gradient(90deg, #fff, #ddd) !important;
+        border-radius: .8rem;
+    }
+
+    .book-page .page-back {
+        border-top: 3px solid #2800f0;
+        border-radius: 0 0 .8rem .8rem;
+    }
+
+    .book-page .page-front {
+        border-radius: .8rem .8rem 0 0;
+    }
+
+    /* Quand il n'y a qu'un seul bloc visible (page-left) */
+    .book-page.page-left .page-front {
+        border-radius: .8rem;
+    }
+
+    /* ---- Masquer les boutons de navigation ---- */
+    .nextprev-btn {
+        display: none !important;
+    }
+
+    /* ---- Numéro de page ---- */
+    .number-page {
+        position: static !important;
+        display: block;
+        text-align: center;
+        transform: none !important;
+        margin-top: 1rem;
+        color: var(--second-text-color);
+    }
+
+    /* ---- Bouton retour profil ---- */
+    .back-profile {
+        position: static !important;
+        display: inline-flex;
+        margin-top: 1rem;
+    }
+
+    .back-profile p {
+        display: none;
+    }
+
+    /* =============== PROFIL =============== */
+    .profile-page {
+        padding: 1.5rem 1rem;
+    }
+
+    .profile-page img {
+        max-width: 150px;
+    }
+
+    .profile-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-page h3 {
+        font-size: 1.1rem;
+    }
+
+    .profile-page p {
+        font-size: .9rem;
+    }
+
+    .profile-page .btn-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .5rem;
+        margin-top: 1rem;
+    }
+
+    .profile-page .btn-box .btn {
+        margin: 0;
+    }
+
+    /* =============== TITRES =============== */
+    .title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    /* =============== À PROPOS (workeduc) =============== */
+    .workeduc-box {
+        border-left: var(--border);
+        margin-left: .5rem;
+    }
+
+    .workeduc-box .workeduc-content {
+        padding-left: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .workeduc-content h3 {
+        font-size: 1rem;
+    }
+
+    .workeduc-content p {
+        font-size: .85rem;
+        line-height: 1.5;
+    }
+
+    /* =============== MES COMPÉTENCES (services-box) =============== */
+    .services-box {
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+        margin-top: .5rem;
+    }
+
+    .services-box .services-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: .8rem;
+        min-height: auto;
+        padding: .8rem 1rem;
+        text-align: left;
+        border: var(--border);
+        border-radius: .5rem;
+        transition: background .2s ease;
+    }
+
+    .services-content i {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+
+    .services-content h3 {
+        flex: 1;
+        font-size: .95rem;
+        margin: 0;
+    }
+
+    .services-content .btn {
+        width: 5.5rem;
+        height: 2rem;
+        font-size: .75rem;
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+
+    /* =============== MES SERVICES (skills-box) =============== */
+    .skills-box {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .skills-box .skills-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .skills-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: .6rem;
+    }
+
+    .skills-content .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .6rem;
+    }
+
+    .skills-content .content span {
+        width: 5.5rem;
+        height: 4.5rem;
+        font-size: .8rem;
+    }
+
+    .skills-content .content span i {
+        font-size: 2.2rem;
+    }
+
+    /* =============== PORTFOLIO =============== */
+    .portfolio-box .img-box {
+        height: 11rem;
+    }
+
+    .portfolio-box .info-box {
+        margin: .8rem 0 1rem;
+    }
+
+    .portfolio-box .info-box .info-title h3 {
+        font-size: 1.1rem;
+    }
+
+    .portfolio-box .info-box p {
+        font-size: .85rem;
+    }
+
+    /* =============== CONTACT =============== */
+    .contact-box textarea {
+        height: 9rem;
+    }
+
+    .contact-box .field {
+        margin-bottom: 1rem;
+        font-size: .9rem;
+    }
+
+    /* =============== MODAL =============== */
+    .modal-content {
+        width: 90%;
+        margin: 15% auto;
+        padding: 1.2rem;
+    }
+
+    .modal-content h2 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 1rem .75rem 2rem;
+    }
+
+    .profile-page img {
+        max-width: 120px;
+    }
+
+    .profile-page h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        width: 8rem;
+        height: 2.6rem;
+        font-size: .85rem;
+    }
+
+    .skills-content .content span {
+        width: 4.8rem;
+        height: 4rem;
+        font-size: .75rem;
+    }
+
+    .skills-content .content span i {
+        font-size: 1.8rem;
+    }
+
+    .portfolio-box .img-box {
+        height: 9rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 8% auto;
+    }
+}
