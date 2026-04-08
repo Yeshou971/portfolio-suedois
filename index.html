@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="cover cover-left"></div>
+        <div class="cover cover-right"></div>
+
+        <div class="book">
+            <!--profil page-->
+            <div class="book-page page-left">
+                <div class="profile-page">
+                    <img src="profil-2.jpeg" alt="">
+                    <h1>Suedois Yeshua</h1>
+                    <h3>Developpeur Web</h3>
+
+                    <div class="social-media">
+                        <a href="https://github.com/Yeshou971" target="_blank"><i class='bx bxl-github'></i></a>
+                        <a href="https://www.linkedin.com/in/yeshua-suedois-3a52b4350/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+
+                    <p>Bonjour, je m'appelle Yeshua SUEDOIS, je suis etudiant en Developement Web.</p>
+
+                    <div class="btn-box">
+                        <a href="CV-SUEDOIS.pdf" target="_blank" class="btn">Télécharger CV</a>
+                        <a href="#" class="btn contact-me">Contactez Moi</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Page 1 & 2-->
+            <div class="book-page page-right turn" id="turn-1">
+                <!--page 1 (A propos)-->
+                <div class="page-front">
+                    <h1 class="title">À Propos de Moi</h1>
+
+                    <div class="workeduc-box">
+                        <div class="workeduc-content">
+                            <h3>Qui suis-je ?</h3>
+                            <p>Passionné par le développement web et les nouvelles technologies, je suis actuellement étudiant 
+                               en BUT MMI où je développe mes compétences en programmation et en design, 
+                               tout en continuant à apprendre et à évoluer dans ce domaine en constante évolution</p>
+                        </div>
+
+                        <div class="workeduc-content">
+                            <h3>Mes Objectifs</h3>
+                            <p>Mon objectif est de contribuer à des projets significatifs qui ont un impact positif sur les 
+                                utilisateurs. 
+                                Je souhaite devenir un développeur web polyvalent, capable de gérer des projets de A à Z. 
+                               Mon ambition est de maîtriser les dernières technologies tout en restant fidèle aux 
+                               principes fondamentaux du développement web de qualité.</p>
+                        </div>
+                    </div>
+
+                    <span class="number-page">1</span>
+
+                    <!--bouton suivant-->
+                    <span class="nextprev-btn" data-page="turn-1">
+                        <i class='bx bx-chevrons-right'></i>
+                    </span>
+                </div>
+
+                <!--page 2 (formation)-->
+                <div class="page-back">
+                    <h1 class="title">Formation</h1>
+
+                    <div class="workeduc-box">
+                        <div class="workeduc-content">
+                            <span class="year"><i class='bx bxs-calendar'></i>2017 - 2018</span>
+                            <h3>Formation en ligne</h3>
+                            <p>La première fois que j’ai découvert le développement web, c’était grâce à une formation sur le site <a href="https://openclassrooms.com/fr/courses/1603881-creez-votre-site-web-avec-html5-et-css3\" target="_blank">OpenClassrooms</a>, 
+                                où j’ai pu faire mes débuts sur Sublime Text 3.</p>
+                        </div>
+                    </div>
+
+                    <div class="workeduc-box">
+                        <div class="workeduc-content">
+                            <span class="year"><i class='bx bxs-calendar'></i>2019 à 2023</span>
+                            <h3>Jeune Sapeur Pompier</h3>
+                            <p>Durant cette formation, j'ai pu apprendre les gestes de secours, la discipline et le travail en équipe, 
+                                tout en me préparant à intégrer les sapeurs-pompiers volontaires ou professionnels.</p>
+                        </div>
+                    </div>
+
+                    <div class="workeduc-box">
+                        <div class="workeduc-content">
+                            <span class="year"><i class='bx bxs-calendar'></i>2024 à 2027</span>
+                            <h3>Licence - BUT MMI</h3>
+                            <p>Après mon baccalauréat général, que j'ai obtenu sans mention, je me suis dirigé vers un Bachelor Universitaire de Technologie (bac +3),
+                                durant lequel je souhaite encore me perfectionner.</p>
+                        </div>
+                    </div>
+
+                    <span class="number-page">2</span>
+
+                    <!--bouton précédent-->
+                    <span class="nextprev-btn back" data-page="turn-1">
+                        <i class='bx bx-chevrons-left'></i>
+                    </span>
+                </div>
+            </div>
+
+            <!--Page 3 & 4-->
+            <div class="book-page page-right turn" id="turn-2">
+                <!--page 3 (mes services)-->
+                <div class="page-front">
+                    <h1 class="title">Mes compétence</h1>
+
+                    <div class="services-box">
+                        <div class="services-content">
+                            <i class='bx bx-search-alt'></i>
+                            <h3>Comprendre</h3>
+                            <a href="#" class="btn modal-btn" data-title="Serious Game" data-content="Le projet 'Serious Game' consistait à créer un jeu éducatif ayant pour thème l’histoire de l’université. 
+                            L’objectif était de concevoir un outil ludique permettant aux étudiants et visiteurs de découvrir de manière interactive les dates clés, les personnalités marquantes et l’évolution de l’établissement. 
+                            Ce projet mêlait recherche historique, créativité et compétences numériques.">Read More</a>
+                        </div>
+
+                        <div class="services-content">
+                            <i class='bx bxs-paint'></i>
+                            <h3>Concevoir</h3>
+                            <a href="#" class="btn modal-btn" data-title="Conception d'un film" data-content="En début d’année, nous avons réalisé un court-métrage de fiction en groupe, portant sur un attentat. 
+                            Ce projet nous a permis d’explorer la mise en scène dramatique, tout en développant nos compétences en écriture de scénario, tournage et montage.">Read More</a>
+                        </div>
+                        
+                        <div class="services-content">
+                            <i class='bx bxs-brain'></i>
+                            <h3>Exprimer</h3>
+                            <a href="#" class="btn modal-btn" data-title="Charte graphique" data-content="Dans le cadre d’un projet créatif, j’ai conçu une charte graphique pour la marque Nike. 
+                            Elle définissait l’univers visuel de la marque à travers le choix des couleurs, des typographies, des icônes et des éléments graphiques, tout en respectant son identité dynamique et sportive. 
+                            Ce travail m’a permis de développer ma sensibilité esthétique, mon sens de la cohérence visuelle et ma capacité à adapter un design à une grande marque.">Read More</a>
+                        </div>
+
+                        <div class="services-content">
+                            <i class='bx bx-code-alt'></i>
+                            <h3>Développer</h3>
+                            <a href="#" class="btn modal-btn" data-title="Site web" data-content="Dans le cadre d’un projet de groupe, nous avons créé un site web à trois sur le thème des rivières. 
+                            Je me suis chargé de l’intégration en HTML ainsi que du développement en JavaScript. 
+                            Ce projet m’a permis de mettre en pratique mes compétences techniques tout en sensibilisant les utilisateurs à l’importance des milieux aquatiques.">Read More</a>
+                        </div>
+
+                        <div class="services-content">
+                            <i class='bx bxs-bar-chart-alt-2'></i>
+                            <h3>Entreprendre</h3>
+                            <a href="#" class="btn modal-btn" data-title="Entreprise" data-content="J’ai participé à la création d’un site web pour l’entreprise GCTF avec 2 de mes camarades. 
+                            Ce projet m’a permis de concevoir une interface claire et fonctionnelle, adaptée aux besoins de l’entreprise. 
+                            Je me suis principalement occupé de la structure du site en HTML et de sa mise en forme avec CSS, en veillant à offrir une navigation fluide et un design professionnel.">Read More</a>
+                        </div>
+                    </div>
+
+                    <span class="number-page">3</span>
+                    
+                    <!--bouton précédent-->
+                    <span class="nextprev-btn" data-page="turn-2">
+                        <i class='bx bx-chevrons-right'></i>
+                    </span>
+                </div>
+
+                <!--page 4 (mes competences)-->
+                <div class="page-back">
+                    <h1 class="title">Mes services</h1>
+
+                    <div class="skills-box">
+                        <div class="skills-content">
+                            <h3>Front-End</h3>
+                            <div class="content">
+                                <span><i class='bx bxl-html5'></i>HTML</span>
+                                <span><i class='bx bxl-css3'></i>CSS</span>
+                                <span><i class='bx bxl-javascript'></i>JS</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-content">
+                            <h3>Back-End</h3>
+                            <div class="content">
+                                <span><i class='bx bxl-python'></i>Python</span>
+                                <span><i class='bx bxl-php'></i>PHP</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-content">
+                            <h3>UI/UX Design</h3>
+                            <div class="content">
+                                <span><i class='bx bxl-figma'></i>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="number-page">4</span>
+                    
+                    <!--bouton précédent-->
+                    <span class="nextprev-btn back" data-page="turn-2">
+                        <i class='bx bx-chevrons-left'></i>
+                    </span>
+                </div>
+            </div>
+
+            <!--Page 5 & 6-->
+            <div class="book-page page-right turn" id="turn-3">
+                <!--Page 5 (Dernier projet)-->
+                <div class="page-front">
+                    <h1 class="title">Dernier projet</h1>
+
+                    <div class="portfolio-box">
+                        <div class="img-box">
+                            <img src="projet.png" alt="The Camp">
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-title">
+                                <h3>The Camp</h3>
+                                <a href="https://thecampmmi.netlify.app" target="_blank">Jouer<i class='bx bx-link-external'></i></a>
+                            </div>
+                            <p>Description :</p>
+                            <p>Ce projet que j'ai realisé avec mon groupe classe, consistait a retrouver des QR code eparpiller sur toute l'université 
+                                qui permettait au etudiant de découvrir les lieux tout en apprenant l'histoire du site.</p>
+                        </div>
+    
+                        <div class="btn-box">
+                            <a href="#" class="btn">Plus de projet</a>
+                        </div>
+                    </div>
+
+                    <span class="number-page">5</span>
+                    
+                    <!--bouton précédent-->
+                    <span class="nextprev-btn" data-page="turn-3">
+                        <i class='bx bx-chevrons-right'></i>
+                    </span>
+                </div>
+                
+                <!--Page 6 (Contactez moi)-->
+                <div class="page-back">
+                    <h1 class="title">Contactez moi</h1>
+                    <div class="contact-box">
+                         <!--action="https://formspree.io/f/xqaqypdo"-->
+                        <form action="code-ex.php" method="post">
+                            <input type="text" name="Name" class="field" placeholder="Nom et Prenom" required>
+                            <input type="email" name="Email" class="field" placeholder="Adresse Mail" required>
+                            <textarea name="Message" id="" cols="30" rows="10" class="field" placeholder="Votre Message" required></textarea>
+                            <input type="submit" class="btn" value="Envoyer">
+                        </form>
+                    </div>
+
+                    <span class="number-page">6</span>
+                    
+                    <!--bouton précédent-->
+                    <span class="nextprev-btn back" data-page="turn-3">
+                        <i class='bx bx-chevrons-left'></i>
+                    </span>
+
+                    <a href="#" class="back-profile">
+                        <p>Profile</p>
+                        <i class='bx bx-user'></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script-ex.js"></script> 
+</body>
+</html>
